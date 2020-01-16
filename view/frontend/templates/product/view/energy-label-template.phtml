@@ -1,0 +1,129 @@
+<?php 
+namespace Tricosmic\EnergyLabel\view\frontend\templates;
+$block = \Magento\Framework\App\ObjectManager::getInstance()->get('tricosmic\energylabel\Block\EnergyLabel');
+$currentProduct = $block->getCurrentProduct();
+if (!empty( $currentProduct = $block->getCurrentProduct() )):
+    $energy_attr = $currentProduct->getCustomAttribute('material')->getValue();
+    echo $energy_attr;
+endif;
+
+
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+    if ($currentProduct = $objectManager->get('Magento\Framework\Registry')->registry('current_product')) {
+        $compareLabelPosition = $currentProduct->getData('tc_en_label_position');
+        //print_r($compareLabelPosition);
+        switch($compareLabelPosition){
+            case "right":
+?>
+<div class="tc-en-label-postition tc-en-position-right">
+    <?php 
+        $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+        $product = $objectManager->get('Magento\Framework\Registry')->registry('current_product');
+        //echo $product->getId();
+        if ($currentProduct = $objectManager->get('Magento\Framework\Registry')->registry('current_product')) {
+            $compareLabel = $currentProduct->getData('tc_en_label');
+            switch($compareLabel){
+                case "AAAA":
+                    ?> 
+                    <div class="tc-en-label-AAAA"><span>Energy Label A***</span></div><?php
+                    break;
+                case "AAA":
+                    ?>  
+                    <div class="tc-en-label-AAA"><span>Energy Label A**</span></div><?php
+                    break;
+                case "AA":
+                    ?> 
+                    <div class="tc-en-label-AA"><span>Energy Label A*</span></div> <?php
+                    break;
+                case "A":
+                    ?>  
+                    <div class="tc-en-label-A"><span>Energy Label A</span></div><?php
+                    break;
+                case "B":
+                    ?>
+                    <div class="tc-en-label-B"><span>Energy Label B</span></div><?php
+                    break;
+                case "C":
+                    ?>
+                    <div class="tc-en-label-C"><span>Energy Label C</span></div><?php
+                    break;
+                case "D":
+                    ?>  
+                    <div class="tc-en-label-D"><span>Energy Label D</span></div><?php
+                    break;
+                case "E":
+                    ?> 
+                    <div class="tc-en-label-E"><span>Energy Label E</span></div><?php
+                    break;
+                case "F":
+                    ?>
+                    <div class="tc-en-label-F"><span>Energy Label F</span></div><?php
+                    break;
+                case "G":
+                    ?>  
+                    <div class="tc-en-label-G"><span>Energy Label G</span></div><?php
+                    break;
+            }
+        }
+        break;
+    case "left": ?>
+        <div class="tc-en-label-postition tc-en-position-left">
+    <?php 
+        $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+        $product = $objectManager->get('Magento\Framework\Registry')->registry('current_product');
+        echo $product->getId();
+        if ($currentProduct = $objectManager->get('Magento\Framework\Registry')->registry('current_product')) {
+            $compareLabel = $currentProduct->getData('tc_en_label');
+            switch($compareLabel){
+                case "AAAA":
+                    ?> 
+                    <div class="tc-en-label-AAAA"><span>Energy Label A***</span></div><?php
+                    break;
+                case "AAA":
+                    ?>  
+                    <div class="tc-en-label-AAA"><span>Energy Label A**</span></div><?php
+                    break;
+                case "AA":
+                    ?> 
+                    <div class="tc-en-label-AA"><span>Energy Label A*</span></div> <?php
+                    break;
+                case "A":
+                    ?>  
+                    <div class="tc-en-label-A"><span>Energy Label A</span></div><?php
+                    break;
+                case "B":
+                    ?>
+                    <div class="tc-en-label-B"><span>Energy Label B</span></div><?php
+                    break;
+                case "C":
+                    ?>
+                    <div class="tc-en-label-C"><span>Energy Label C</span></div><?php
+                    break;
+                case "D":
+                    ?>  
+                    <div class="tc-en-label-D"><span>Energy Label D</span></div><?php
+                    break;
+                case "E":
+                    ?> 
+                    <div class="tc-en-label-E"><span>Energy Label E</span></div><?php
+                    break;
+                case "F":
+                    ?>
+                    <div class="tc-en-label-F"><span>Energy Label F</span></div><?php
+                    break;
+                case "G":
+                    ?>  
+                    <div class="tc-en-label-G"><span>Energy Label G</span></div><?php
+                    break;
+            }
+        }
+        break;
+    }
+}
+    //echo "ID:";
+    //echo $currentProduct->getData('label'); }
+    //echo ' value';
+
+            ?>
+</div>  
+

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+
+	<head>
+		<css src="tricosmic_energyLabel::css/styles.css" />
+	</head>
+
+	<referenceContainer name="product.info.media" htmlClass="product media en-label-main-div">
+   	
+   	<block class="tricosmic\energylabel\Block\EnergyLabel" name="energy-label" template="tricosmic_energyLabel::product/view/energy-label-template.phtml" before="-">
+   		
+   	</block>
+	
+	</referenceContainer>
+
+</page>
